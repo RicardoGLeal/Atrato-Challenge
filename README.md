@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+### Express JSON API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a simple Express.js server that provides RESTful API endpoints for managing JSON data stored in a file. The server allows users to perform CRUD (Create, Read, Update, Delete) operations on the data.
 
-## Available Scripts
+#### Technologies Used:
+- Node.js
+- Express.js
+- axios (HTTP client for making requests)
 
-In the project directory, you can run:
+#### Setup Instructions:
+1. Clone the repository to your local machine.
+2. Install dependencies by running `npm install`.
+3. Run the server using `npm start`.
+4. The server will start running on port 5001 by default.
 
-### `npm start`
+#### API Endpoints:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **GET /api/data**
+   - Description: Retrieves all records from the JSON data file.
+   - Response: JSON array of records.
+   
+2. **GET /api/data/:id**
+   - Description: Retrieves a specific record by its ID from the JSON data file.
+   - Response: JSON object of the requested record.
+   
+3. **POST /api/data**
+   - Description: Creates a new record in the JSON data file.
+   - Request Body: JSON object representing the new record.
+   - Response: JSON object of the newly created record.
+   
+4. **PUT /api/data/:id**
+   - Description: Updates an existing record in the JSON data file.
+   - Request Body: JSON object with updated record fields.
+   - Response: JSON object of the updated record.
+   
+5. **DELETE /api/data/:id**
+   - Description: Deletes a record from the JSON data file by its ID.
+   - Response: JSON array of records after deletion.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Example Usage:
+- To retrieve all records: `GET /api/data`
+- To retrieve a specific record with ID 123: `GET /api/data/123`
+- To create a new record: `POST /api/data` with JSON body
+  ```
+  {
+    "id": 123,
+    "name": "John Doe",
+    "age": 30
+  }
+  ```
+- To update a record with ID 123: `PUT /api/data/123` with JSON body containing updated fields.
+- To delete a record with ID 123: `DELETE /api/data/123`
 
-### `npm test`
+#### Note:
+- The server uses CORS middleware to enable Cross-Origin Resource Sharing.
+- Error responses include appropriate status codes and error messages.
+- The JSON data file is stored at `data/data.json` relative to the server file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to explore and modify the code as needed for your own projects!
